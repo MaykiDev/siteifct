@@ -94,12 +94,77 @@ a {
     color: var(--cor-principal);
 }
 
+.hero-section {
+    min-height: calc(100vh - 80px);
+    background-color: var(--cor-principal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    padding: 60px 20px;
+    background-image: url('UtilFile/design\ capa.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
-/* --- SEÇÃO MOBILE: Responsividade (Telas menores) --- */
+.hero-content {
+    max-width: 850px; 
+    color: white;
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
-@media (max-width: 900px) { /* Ponto de quebra: exibe menu hamburguer */
+.hero-content h1 {
+    font-size: 4em;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0 auto 40px;
+    max-width: 650px;
+    opacity: 1;
+    text-align: center;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-principal);
+    font-weight: 700;
+    font-size: 1.2em;
+    padding: 15px 40px;
+    border-radius: 5px;
+    border: none;
+    text-transform: uppercase;
+    transition: opacity 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 280px;
+    height: 60px;
+    line-height: 60px;
+    box-sizing: border-box;
+    padding: 0 40px;
+}
+
+.btn-cta:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* --- SEÇÃO MOBILE --- */
+
+@media (max-width: 900px) {
     
-    /* Mostrar o ícone do Hambúrguer */
     .menu-toggle {
         display: block;
         background: none;
@@ -108,37 +173,30 @@ a {
         padding: 5px;
     }
     
-    /* Ícone dentro do botão Toggle */
     .icon-menu {
-        width: 30px; /* Ajuste o tamanho da sua imagem de hambúrguer */
+        width: 30px;
         height: 30px;
-        filter: invert(1); /* Deixa o ícone branco (se ele for preto) */
+        filter: invert(1);
     }
 
-    /* Esconder o botão contato e a lista de navegação padrão */
-    .btn-contato-desktop,
-    .nav-list {
+    .btn-contato-desktop, .nav-list {
         display: none;
     }
 
-    /* Estilo do Menu Mobile */
     .nav-menu {
-        /* Configuração de tela cheia com transparência (como solicitado) */
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
-        background-color: var(--cor-principal); /* Fundo branco semi-transparente MAIS visível */
+        height: 100vh;
+        background-color: var(--cor-principal);
         z-index: 999;
-        display: none; /* Inicia escondido */
+        display: none;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-        padding-top: 150px;
+        justify-content: center;
     }
 
-    /* Menu Mobile ABERTO */
     .nav-menu.active {
         display: flex;
         flex-direction: column;
@@ -146,7 +204,6 @@ a {
         justify-content: center;
     }
 
-    /* Mostrar o botão de Fechar (X) dentro do menu mobile */
     .menu-close {
         display: block;
         position: absolute;
@@ -158,14 +215,12 @@ a {
         padding: 5px;
     }
 
-    /* Ícone dentro do botão Close */
     .icon-close {
-        width: 30px; /* Ajuste o tamanho da sua imagem X */
+        width: 30px;
         height: 30px;
-        filter: invert(0); /* Deixa o ícone preto para contraste com o menu branco */
+        filter: invert(0);
     }
 
-    /* Lista de links no Menu Mobile */
     .nav-list {
         display: flex;
         flex-direction: column;
@@ -175,20 +230,18 @@ a {
     }
 
     .nav-list a {
-        color: white; /* Cor escura para o texto no menu branco */
+        color: white;
         font-size: 24px;
         font-weight: 700;
         padding: 10px;
     }
 
-    /* Mostrar o Botão Contato dentro do Menu Mobile (Abaixo de Notícias) */
     .contato-mobile-item {
-        display: block; /* Torna o item Contato visível apenas no mobile */
+        display: block;
         margin-top: 20px;
     }
 
     .btn-contato-mobile {
-        /* Estilo idêntico ao desktop, mas com cores invertidas para contraste */
         color: white;
         border: 2px solid var(--cor-secundaria);
         padding: 10px 30px;
@@ -200,5 +253,33 @@ a {
     .btn-contato-mobile:hover {
         background-color: var(--cor-secundaria);
         color: var(--cor-principal);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+
+    .btn-cta {
+        font-size: 1.1em;
+        min-width: 200px;
+        height: 50px;
+        line-height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-section {
+        min-height: calc(80vh - 80px);
     }
 }
