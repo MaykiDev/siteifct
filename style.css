@@ -111,7 +111,7 @@ a {
 }
 
 .hero-content {
-    max-width: 850px; 
+    max-width: 900px; 
     color: white;
     padding: 0;
     width: 100%;
@@ -122,7 +122,7 @@ a {
 
 .hero-content h1 {
     font-size: 4em;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.1;
     margin-bottom: 30px;
     text-align: center;
@@ -141,21 +141,20 @@ a {
 .btn-cta {
     display: inline-block;
     background-color: var(--cor-secundaria);
-    color: var(--cor-principal);
-    font-weight: 700;
-    font-size: 1.2em;
-    padding: 15px 40px;
+    color: white;
+    font-weight: 900;
+    font-size: 2em;
     border-radius: 5px;
     border: none;
     text-transform: uppercase;
     transition: opacity 0.3s, transform 0.3s;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 280px;
-    height: 60px;
+    width: 500px;
+    height: 90px;
     line-height: 60px;
     box-sizing: border-box;
-    padding: 0 40px;
+    padding-top: 15px;
 }
 
 .btn-cta:hover {
