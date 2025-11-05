@@ -4,10 +4,14 @@
     --fundo-transparente: rgba(255, 255, 255, 0.1);
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
-    background-color: white;
+    background-color: #d8dad5;
     background-attachment: fixed;
 }
 
@@ -23,7 +27,7 @@ a {
 }
 
 .header {
-    background-color: var(--fundo-transparente);
+    background-color: #01112783;
     position: fixed;
     top: 0;
     left: 0;
@@ -71,9 +75,7 @@ a {
 }
 
 
-.menu-toggle,
-.menu-close,
-.contato-mobile-item {
+.menu-toggle, .menu-close, .contato-mobile-item {
     display: none;
 }
 
@@ -101,7 +103,7 @@ a {
     align-items: center;
     text-align: center; 
     padding: 60px 20px;
-    background-image: url('UtilFile/design\ capa.png');
+    background-image: url('UtilFile/fundo_inicio.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -139,7 +141,9 @@ a {
 }
 
 .btn-cta {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--cor-secundaria);
     color: white;
     font-weight: 900;
@@ -152,14 +156,89 @@ a {
     text-align: center;
     width: 500px;
     height: 90px;
-    line-height: 60px;
     box-sizing: border-box;
-    padding-top: 15px;
 }
 
 .btn-cta:hover {
     opacity: 0.9;
     transform: translateY(-2px);
+}
+
+/* --- SEÇÃO: COMPROMISSO / SOBRE NÓS --- */
+
+.commitment-section {
+    background-color: #d8dad5;
+    padding: 0px 100px 20px;
+}
+
+.commitment-content {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    padding: 0;
+}
+
+.commitment-left {
+    flex: 1;
+    max-width: 55%;
+}
+
+.commitment-right {
+    flex: 1;
+    max-width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mockup-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.commitment-tag {
+    color: var(--cor-secundaria);
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.commitment-left h2 {
+    color: var(--cor-principal);
+    font-size: 2.2em;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.commitment-text {
+    color: #0f4558;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.commitment-header-logo {
+    display: flex;
+    align-items: center;
+    margin: 60px auto 0;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.commitment-logo-img {
+    height: 30px; 
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.logo-divider {
+    height: 2px;
+    width: 100%;
+    flex-grow: 1;
+    background-color: var(--cor-secundaria); 
+    border-radius: 5px;
 }
 
 /* --- SEÇÃO MOBILE --- */
@@ -255,6 +334,45 @@ a {
         background-color: var(--cor-secundaria);
         color: var(--cor-principal);
     }
+
+    /* RESPONSIVIDADE PARA A SEÇÃO COMPROMISSO */
+    .commitment-section {
+        padding: 60px 20px;
+    }
+
+    .commitment-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .commitment-left,
+    .commitment-right {
+        max-width: 100%;
+    }
+    
+    .commitment-left h2 {
+        font-size: 2em;
+    }
+
+    .commitment-right {
+        max-width: 80%;
+    }
+
+    .mockup-img {
+        width: 100%;
+    }
+
+    .commitment-tag,
+    .commitment-left h2 {
+        text-align: center;
+    }
+
+    .commitment-header-logo {
+        width: 100%;
+        margin: 60px auto 0;
+        padding: 0 0 0 20px;
+        justify-content: flex-start; 
+    }
 }
 
 @media (max-width: 768px) {
@@ -271,7 +389,6 @@ a {
         font-size: 1.1em;
         min-width: 200px;
         height: 50px;
-        line-height: 50px;
     }
 }
 
