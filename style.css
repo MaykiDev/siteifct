@@ -356,11 +356,178 @@ a {
     display: none !important; 
 }
 
+/* --- SEÇÃO DEPOIMENTOS DE CLIENTES --- */
+#depoimentos-clientes {
+    background-color: #011127; /* Cor de fundo principal da seção */
+    color: white;
+    padding-bottom: 80px; /* Espaço abaixo do conteúdo principal */
+}
+
+.depoimentos-carrossel-area {
+    position: relative;
+    height: 300px; /* Altura da área do carrossel */
+    overflow: hidden; /* Garante que o carrossel não vaze */
+    /* Imagem de Fundo para a área do carrossel (ajuste o caminho da imagem) */
+    background-image: url('UtilFile/background-carrossel.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito Parallax, se desejar */
+    display: flex; /* Para centralizar o scroller verticalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.depoimentos-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1, 17, 39, 0.7); /* Overlay mais suave que o do print */
+    z-index: 1;
+}
+
+.depoimentos-scroller-container {
+    position: relative; /* Para que o scroller-container fique acima do overlay */
+    z-index: 2;
+    width: 100%;
+    overflow: hidden; /* Esconde o scrollbar */
+    padding: 20px 0; /* Padding interno para os cards */
+}
+
+.depoimentos-scroller {
+    display: flex;
+    animation: scroll-carousel 30s linear infinite; /* Animação de scroll */
+    width: max-content; /* Permite que o conteúdo seja maior que a tela */
+    gap: 30px; /* Espaçamento entre os cards */
+    padding: 0 50px; /* Padding nas laterais para que os cards apareçam da borda */
+}
+
+.depoimento-card {
+    background-color: rgba(255, 255, 255, 0.08); /* Fundo semi-transparente do card */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    min-width: 280px; /* Largura mínima do card */
+    max-width: 320px; /* Largura máxima do card */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 180px; /* Altura fixa para os cards, ajuste conforme necessário */
+}
+
+.depoimento-avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 3px solid #ff9900; /* Borda laranja para o avatar */
+}
+
+.depoimento-estrelas {
+    color: #ff9900; /* Cor laranja para as estrelas */
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.depoimento-texto {
+    font-size: 0.95em;
+    line-height: 1.5;
+    color: #f0f0f0;
+}
+
+/* Animação para o carrossel */
+@keyframes scroll-carousel {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Ajuste este valor se duplicar mais cards */
+}
+
+/* Conteúdo principal abaixo do carrossel */
+.depoimentos-content-container {
+    text-align: center;
+    padding-top: 60px; /* Espaço entre o carrossel e o conteúdo */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.depoimentos-subtitulo {
+    font-size: 0.9em;
+    color: #bbb;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.depoimentos-titulo {
+    font-size: 2.8em;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+
+.depoimentos-titulo .destaque-laranja {
+    color: #ff9900; /* Laranja para o destaque */
+}
+
+.depoimentos-descricao {
+    font-size: 1.1em;
+    line-height: 1.7;
+    color: #d0d0d0;
+    margin-bottom: 25px;
+}
+
+.btn-solicitar-proposta-depoimentos {
+    display: inline-block;
+    background-color: #ff9900; /* Laranja */
+    color: #011127; /* Cor do texto do botão */
+    padding: 15px 35px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+}
+
+.btn-solicitar-proposta-depoimentos:hover {
+    background-color: #e68a00; /* Laranja mais escuro no hover */
+}
+
 /* --- RESPONSIVIDADE --- */
+
+@media (max-width: 1200px) {
+    .depoimentos-scroller {
+        padding: 0 30px;
+    }
+}
 
 @media (max-width: 1100px) {
     .vantagens-grid-cards {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .parceiros-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas em tablets */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .depoimentos-titulo {
+        font-size: 2.3em;
+    }
+    .depoimento-card {
+        min-width: 250px;
+        max-width: 280px;
+    }
+    .depoimentos-scroller {
+        gap: 20px;
+        animation-duration: 40s; /* Ajusta a velocidade em telas menores */
     }
 }
 
@@ -511,6 +678,34 @@ a {
         min-width: 200px;
         height: 50px;
     }
+    .depoimentos-carrossel-area {
+        height: 280px;
+    }
+    .depoimentos-titulo {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+    .depoimentos-descricao {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+    .depoimento-card {
+        min-width: 220px;
+        max-width: 250px;
+        height: 170px;
+        padding: 15px;
+    }
+    .depoimento-avatar {
+        width: 60px;
+        height: 60px;
+    }
+    .depoimento-texto {
+        font-size: 0.9em;
+    }
+    .depoimentos-scroller {
+        padding: 0 20px;
+        animation-duration: 50s; /* Mais lento em mobile */
+    }
 }
 
 @media (max-width: 650px) {
@@ -538,5 +733,32 @@ a {
 
     .hero-section {
         min-height: calc(80vh - 80px);
+    }
+    
+    .depoimentos-carrossel-area {
+        height: 250px;
+    }
+    .depoimentos-titulo {
+        font-size: 1.5em;
+    }
+    .depoimento-card {
+        min-width: 180px;
+        max-width: 200px;
+        height: 160px;
+        padding: 10px;
+    }
+    .depoimento-avatar {
+        width: 50px;
+        height: 50px;
+    }
+    .depoimento-estrelas {
+        font-size: 0.9em;
+    }
+    .depoimento-texto {
+        font-size: 0.85em;
+    }
+    .btn-solicitar-proposta-depoimentos {
+        padding: 12px 25px;
+        font-size: 1em;
     }
 }
