@@ -918,17 +918,21 @@ a {
         font-size: 2.2em;
         margin-bottom: 40px;
     }
+    
     .solution-icon-container {
-        width: 70px; /* Reduzir um pouco o ícone em telas menores */
+        width: 70px;
         height: 70px;
     }
+    
     .solution-icon {
         width: 40px;
         height: 40px;
     }
+
     .solution-card-title {
         font-size: 1.3em;
     }
+
     .solution-card-text {
         font-size: 0.9em;
     }
@@ -952,18 +956,21 @@ a {
     }
 
     .solutions-grid-cards {
-        grid-template-columns: 1fr; /* 1 coluna em telas pequenas */
+        grid-template-columns: 1fr;
     }
     
     .solutions-title {
         font-size: 1.8em;
     }
+
     .solution-card {
-        padding: 30px 20px; /* Ajustar padding do card em telas muito pequenas */
+        padding: 30px 20px;
     }
+
     .solution-card-title {
         font-size: 1.2em;
     }
+
     .solution-card-text {
         font-size: 0.85em;
     }
