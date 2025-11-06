@@ -351,29 +351,28 @@ a {
     transform: translateY(-2px);
 }
 
-
 .btn-solicitar-proposta-desktop, .btn-solicitar-proposta-mobile {
     display: none !important; 
 }
 
 /* --- SEÇÃO DEPOIMENTOS DE CLIENTES --- */
+
 #depoimentos-clientes {
-    background-color: #011127; /* Cor de fundo principal da seção */
+    background-color: #011127;
     color: white;
-    padding-bottom: 80px; /* Espaço abaixo do conteúdo principal */
+    padding-bottom: 80px;
 }
 
 .depoimentos-carrossel-area {
     position: relative;
-    height: 300px; /* Altura da área do carrossel */
-    overflow: hidden; /* Garante que o carrossel não vaze */
-    /* Imagem de Fundo para a área do carrossel (ajuste o caminho da imagem) */
+    height: 300px;
+    overflow: hidden;
     background-image: url('UtilFile/background-carrossel.jpg'); 
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Efeito Parallax, se desejar */
-    display: flex; /* Para centralizar o scroller verticalmente */
-    align-items: center; /* Centraliza verticalmente */
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
 }
 
 .depoimentos-overlay {
@@ -390,16 +389,17 @@ a {
     position: relative;
     z-index: 2;
     width: 100%;
-    overflow: hidden; /* Esconde o scrollbar */
-    padding: 20px 0; /* Padding interno para os cards */
+    overflow: hidden;
+    padding: 20px 0;
     mask-image: linear-gradient(
         to right, 
-        transparent 0%, /* Início transparente */
-        black 10%,      /* Fica totalmente visível a partir de 10% */
-        black 90%,      /* Permanece totalmente visível até 90% */
-        transparent 100% /* Volta a ser transparente no final */
+        transparent 0%,
+        black 10%,
+        black 90%,
+        transparent 100%
     );
-    -webkit-mask-image: linear-gradient( /* Para compatibilidade com navegadores baseados em WebKit */
+
+    -webkit-mask-image: linear-gradient(
         to right, 
         transparent 0%, 
         black 10%, 
@@ -410,25 +410,24 @@ a {
 
 .depoimentos-scroller {
     display: flex;
-    animation: scroll-carousel 30s linear infinite; /* Animação de scroll */
-    width: max-content; /* Permite que o conteúdo seja maior que a tela */
-    gap: 30px; /* Espaçamento entre os cards */
-    padding: 0 50px; /* Padding nas laterais para que os cards apareçam da borda */
+    width: max-content;
+    gap: 30px;
+    padding: 0 50px;
 }
 
 .depoimento-card {
-    background-color: rgba(255, 255, 255, 0.08); /* Fundo semi-transparente do card */
+    background-color: rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     padding: 20px;
     text-align: center;
-    min-width: 280px; /* Largura mínima do card */
-    max-width: 320px; /* Largura máxima do card */
+    min-width: 280px;
+    max-width: 320px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 180px; /* Altura fixa para os cards, ajuste conforme necessário */
+    height: 180px;
 }
 
 .depoimento-avatar {
@@ -437,11 +436,11 @@ a {
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
-    border: 3px solid #ff9900; /* Borda laranja para o avatar */
+    border: 3px solid #ff9900;
 }
 
 .depoimento-estrelas {
-    color: #ff9900; /* Cor laranja para as estrelas */
+    color: #ff9900;
     margin-bottom: 10px;
     font-size: 1.1em;
 }
@@ -452,16 +451,9 @@ a {
     color: #f0f0f0;
 }
 
-/* Animação para o carrossel */
-@keyframes scroll-carousel {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Ajuste este valor se duplicar mais cards */
-}
-
-/* Conteúdo principal abaixo do carrossel */
 .depoimentos-content-container {
     text-align: center;
-    padding-top: 60px; /* Espaço entre o carrossel e o conteúdo */
+    padding-top: 60px;
     max-width: 900px;
     margin: 0 auto;
 }
@@ -483,7 +475,7 @@ a {
 }
 
 .depoimentos-titulo .destaque-laranja {
-    color: #ff9900; /* Laranja para o destaque */
+    color: #ff9900;
 }
 
 .depoimentos-descricao {
@@ -495,8 +487,8 @@ a {
 
 .btn-solicitar-proposta-depoimentos {
     display: inline-block;
-    background-color: #ff9900; /* Laranja */
-    color: #011127; /* Cor do texto do botão */
+    background-color: #ff9900;
+    color: #011127;
     padding: 15px 35px;
     border-radius: 5px;
     text-decoration: none;
@@ -507,7 +499,7 @@ a {
 }
 
 .btn-solicitar-proposta-depoimentos:hover {
-    background-color: #e68a00; /* Laranja mais escuro no hover */
+    background-color: #e68a00;
 }
 
 /* --- RESPONSIVIDADE --- */
@@ -526,7 +518,7 @@ a {
 
 @media (max-width: 1024px) {
     .parceiros-grid {
-        grid-template-columns: repeat(4, 1fr); /* 4 colunas em tablets */
+        grid-template-columns: repeat(4, 1fr);
         gap: 20px;
     }
 }
@@ -535,13 +527,15 @@ a {
     .depoimentos-titulo {
         font-size: 2.3em;
     }
+
     .depoimento-card {
         min-width: 250px;
         max-width: 280px;
     }
+
     .depoimentos-scroller {
         gap: 20px;
-        animation-duration: 40s; /* Ajusta a velocidade em telas menores */
+        animation-duration: 40s;
     }
 }
 
@@ -638,6 +632,7 @@ a {
     }
 
     /* RESPONSIVIDADE PARA A SEÇÃO COMPROMISSO */
+
     .commitment-section {
         padding: 60px 20px;
     }
@@ -692,33 +687,40 @@ a {
         min-width: 200px;
         height: 50px;
     }
+
     .depoimentos-carrossel-area {
         height: 280px;
     }
+
     .depoimentos-titulo {
         font-size: 1.8em;
         margin-bottom: 20px;
     }
+
     .depoimentos-descricao {
         font-size: 1em;
         margin-bottom: 20px;
     }
+
     .depoimento-card {
         min-width: 220px;
         max-width: 250px;
         height: 170px;
         padding: 15px;
     }
+
     .depoimento-avatar {
         width: 60px;
         height: 60px;
     }
+
     .depoimento-texto {
         font-size: 0.9em;
     }
+
     .depoimentos-scroller {
         padding: 0 20px;
-        animation-duration: 50s; /* Mais lento em mobile */
+        animation-duration: 50s;
     }
 }
 
@@ -752,25 +754,31 @@ a {
     .depoimentos-carrossel-area {
         height: 250px;
     }
+
     .depoimentos-titulo {
         font-size: 1.5em;
     }
+
     .depoimento-card {
         min-width: 180px;
         max-width: 200px;
         height: 160px;
         padding: 10px;
     }
+
     .depoimento-avatar {
         width: 50px;
         height: 50px;
     }
+
     .depoimento-estrelas {
         font-size: 0.9em;
     }
+
     .depoimento-texto {
         font-size: 0.85em;
     }
+
     .btn-solicitar-proposta-depoimentos {
         padding: 12px 25px;
         font-size: 1em;
