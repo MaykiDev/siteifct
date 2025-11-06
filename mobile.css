@@ -10,6 +10,18 @@
     .vantagens-grid-cards {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .solutions-grid-cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas médias */
+    }
+
+    .solution-card-title {
+        font-size: 1.4em; /* Ajuste para telas menores */
+    }
+
+    .solution-card-text {
+        font-size: 0.95em; /* Ajuste para telas menores */
+    }
 }
 
 @media (max-width: 1024px) {
@@ -178,7 +190,7 @@
     }
 
     .history-text {
-        text-align: left; /* Mantém o alinhamento do texto padrão */
+        text-align: left;
     }
 
     .history-title {
@@ -237,6 +249,29 @@
         padding: 0 20px;
         animation-duration: 50s;
     }
+
+    .solutions-section {
+        padding: 60px 20px;
+    }
+    
+    .solutions-title {
+        font-size: 2.2em;
+        margin-bottom: 40px;
+    }
+    .solution-icon-container {
+        width: 70px; /* Reduzir um pouco o ícone em telas menores */
+        height: 70px;
+    }
+    .solution-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .solution-card-title {
+        font-size: 1.3em;
+    }
+    .solution-card-text {
+        font-size: 0.9em;
+    }
 }
 
 @media (max-width: 650px) {
@@ -254,6 +289,23 @@
         width: 100%;
         max-width: 300px;
         height: 60px;
+    }
+
+    .solutions-grid-cards {
+        grid-template-columns: 1fr; /* 1 coluna em telas pequenas */
+    }
+    
+    .solutions-title {
+        font-size: 1.8em;
+    }
+    .solution-card {
+        padding: 30px 20px; /* Ajustar padding do card em telas muito pequenas */
+    }
+    .solution-card-title {
+        font-size: 1.2em;
+    }
+    .solution-card-text {
+        font-size: 0.85em;
     }
 }
 

@@ -560,8 +560,6 @@ a {
 .history-image-main {
     max-width: 100%;
     height: auto;
-    /* Ajuste o estilo da imagem para corresponder ao visual 3D/sobreposição, se necessário */
-    /* Como é uma imagem complexa (com várias fotos), apenas garantimos que ela caiba */
 }
 
 .history-divider {
@@ -571,4 +569,91 @@ a {
     background-color: var(--cor-secundaria); 
     margin: 0 auto;
     border-radius: 5px;
+}
+
+/* --- SEÇÃO SOLUÇÕES --- */
+
+.solutions-section {
+    background-color: #d8dad5;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.solutions-content-central {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.solutions-title {
+    color: var(--cor-principal);
+    font-size: 2.8em;
+    font-weight: 700;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.solutions-grid-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.solution-card {
+    background-color: var(--cor-principal);
+    padding: 40px 30px;
+    border-radius: 10px;
+    text-align: center;
+    height: 100%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease; 
+}
+
+.solution-card:hover {
+    transform: translateY(-5px);
+}
+
+.solution-icon-container {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    border: 3px solid var(--cor-secundaria);
+}
+
+.solution-icon {
+    width: 45px;
+    height: 45px;
+    filter: none;
+}
+
+.solution-card-title {
+    color: white;
+    font-size: 1.6em;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 15px 0;
+}
+
+.solution-card-text {
+    color: #cccccc;
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.solutions-divider {
+    width: auto;
+    max-width: 1200px;
+    height: 2px;
+    background-color: var(--cor-secundaria);
+    margin: 50px auto 0 auto;
+    border-radius: 2px;
 }
