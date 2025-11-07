@@ -103,7 +103,7 @@ a {
     align-items: center;
     text-align: center; 
     padding: 60px 20px;
-    background-image: url('UtilFile/fundo_inicio.png');
+    background-image: url('UtilFile/img/fundo_inicio.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -918,7 +918,7 @@ a {
         font-size: 2.2em;
         margin-bottom: 40px;
     }
-    
+
     .solution-icon-container {
         width: 70px;
         height: 70px;
