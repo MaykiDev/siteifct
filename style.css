@@ -658,6 +658,243 @@ a {
     border-radius: 2px;
 }
 
+/* --- SEÇÃO PERGUNTAS FREQUENTES (FAQ) --- */
+
+.faq-section {
+    background-color: var(--cor-principal); 
+    padding: 80px 20px;
+    color: white;
+    text-align: center;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-title {
+    font-size: 2.8em;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre cada item do FAQ */
+}
+
+.faq-item {
+    background-color: #0d233e; /* Um tom um pouco mais claro que o fundo */
+    border-radius: 8px;
+    overflow: hidden; /* Importante para o efeito sanfona */
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 20px 25px;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover, .faq-item.active .faq-question {
+    background-color: #14355f; 
+}
+
+/* Estilo do Ícone (seta) */
+.faq-icon {
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid white; 
+    transition: transform 0.3s ease;
+}
+
+/* Rotação do ícone quando ativo */
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+    border-top: 6px solid var(--cor-secundaria); 
+}
+
+/* Conteúdo da Resposta */
+.faq-answer {
+    max-height: 0;
+    padding: 0 25px;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    overflow: hidden;
+    background-color: #081d33; /* Fundo diferente para a resposta */
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Um valor alto o suficiente para caber o texto */
+    padding: 15px 25px 20px;
+}
+
+.faq-answer p {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #cccccc;
+}
+
+/* --- SEÇÃO CONTATO --- */
+
+.contact-section {
+    background-color: var(--cor-principal); 
+    padding: 80px 20px;
+    color: white;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Coluna da Esquerda (Info) */
+.contact-info {
+    flex: 1;
+    max-width: 500px;
+}
+
+.contact-title {
+    font-size: 3em;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.contact-description {
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    color: #cccccc;
+}
+
+.contact-description strong {
+    color: var(--cor-secundaria);
+    font-weight: 700;
+}
+
+.btn-fale-conosco {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-secundaria);
+    color: white;
+    font-weight: 700;
+    font-size: 1.5em;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.btn-fale-conosco:hover {
+    background-color: #e68a00;
+    transform: translateY(-2px);
+}
+
+.btn-fale-conosco .fab {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.contact-phone {
+    font-size: 1.1em;
+    color: #999999;
+    margin-top: 20px;
+}
+
+/* Coluna da Direita (Formulário) */
+.contact-form-container {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.3); /* Cor do campo com transparência */
+    color: white;
+    font-size: 1em;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.form-input::placeholder, .form-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 0 2px var(--cor-secundaria);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 180px; /* Altura do campo de texto conforme a imagem */
+}
+
+/* --- ESTILO DO BOTÃO DE SUBMISSÃO --- */
+
+.btn-submit {
+    /* Herda o estilo do .btn-cta, mas ajusta para o contexto do formulário */
+    width: 100%;
+    height: 60px;
+    font-size: 1.5em;
+    margin-top: 5px; /* Pequeno espaçamento */
+    cursor: pointer;
+}
+
+.btn-submit:disabled {
+    background-color: #555; /* Cor cinza/escura quando desabilitado */
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none; /* Remove efeito de hover/press em estado desabilitado */
+    box-shadow: none;
+}
+
+.btn-submit:disabled:hover {
+    opacity: 0.6;
+    transform: none;
+}
+
 /* --- RESPONSIVIDADE --- */
 
 @media (max-width: 1200px) {
@@ -854,6 +1091,41 @@ a {
         font-size: 2.2em;
         margin-bottom: 30px;
     }
+
+    .contact-content {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .contact-info, .contact-form-container {
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .contact-info {
+        order: 2; /* Move as info para baixo no mobile */
+    }
+
+    .contact-form-container {
+        order: 1; /* Move o formulário para cima no mobile */
+    }
+    
+    .contact-title {
+        font-size: 2.5em;
+    }
+
+    .contact-description {
+        font-size: 1.1em;
+        margin-bottom: 30px;
+    }
+
+    .btn-fale-conosco {
+        width: 100%;
+        max-width: 300px;
+        font-size: 1.3em;
+    }
 }
 
 @media (max-width: 768px) {
@@ -932,6 +1204,16 @@ a {
 
     .solution-card-text {
         font-size: 0.9em;
+    }
+
+    .faq-title {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+
+    .faq-question {
+        font-size: 1em;
+        padding: 15px 20px;
     }
 }
 
