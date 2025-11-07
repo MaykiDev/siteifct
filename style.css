@@ -810,8 +810,7 @@ a {
         gap: 40px;
     }
     
-    .commitment-left,
-    .commitment-right {
+    .commitment-left, .commitment-right {
         max-width: 100%;
     }
     
@@ -827,8 +826,7 @@ a {
         width: 100%;
     }
 
-    .commitment-tag,
-    .commitment-left h2 {
+    .commitment-tag, .commitment-left h2 {
         text-align: center;
     }
 
@@ -844,8 +842,7 @@ a {
         gap: 40px;
     }
 
-    .history-text,
-    .history-image {
+    .history-text, .history-image {
         max-width: 100%;
     }
 
