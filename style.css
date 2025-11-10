@@ -439,12 +439,6 @@ a {
     border: 3px solid #ff9900;
 }
 
-.depoimento-estrelas {
-    color: #ff9900;
-    margin-bottom: 10px;
-    font-size: 1.1em;
-}
-
 .depoimento-texto {
     font-size: 0.95em;
     line-height: 1.5;
@@ -895,6 +889,148 @@ a {
     transform: none;
 }
 
+/* --- ESTILO DO FOOTER (RODAPÉ) --- */
+
+.footer {
+    background-color: var(--cor-principal);
+    padding: 60px 20px;
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px; /* Garante que as colunas não fiquem muito estreitas */
+}
+
+/* --- Coluna 1: Info e Social --- */
+
+.footer-col-info {
+    max-width: 350px;
+    flex: 1.5;
+}
+
+.footer-logo {
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.footer-description {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.footer-ratings {
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    transition: opacity 0.3s;
+}
+
+.social-icon:hover {
+    opacity: 0.8;
+}
+
+/* --- Coluna 2 e 3: Links --- */
+
+.footer-col-links, .footer-col-contato {
+    min-width: 180px;
+    padding-top: 20px; /* Alinha o conteúdo com a base do logo */
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+}
+
+.footer-list li {
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+.footer-list a {
+    color: #cccccc;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.footer-list a:hover {
+    color: var(--cor-secundaria);
+}
+
+.cnpj {
+    color: #cccccc;
+    font-size: 0.9em;
+    margin-top: 25px;
+}
+
+.btn-central-ajuda {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: opacity 0.3s;
+}
+
+.btn-central-ajuda:hover {
+    opacity: 0.9;
+}
+
+/* --- NOVO ESTILO PARA AS ESTRELAS (IMAGEM PNG) --- */
+
+.star-icon {
+    width: 18px; /* Tamanho padrão da estrela */
+    height: 18px; 
+    vertical-align: middle; /* Alinha a imagem verticalmente */
+    margin: 0 1px; /* Espaçamento entre estrelas */
+}
+
+/* Ajuste para o tamanho no RODAPÉ */
+.footer-stars .star-icon {
+    width: 25px; /* Tamanho maior no rodapé */
+    height: 25px;
+    margin: 0 2px;
+}
+
+/* Removemos o estilo de cor que era aplicado ao Font Awesome */
+.depoimento-estrelas {
+    /* Cor não é mais necessária, pois está na imagem */
+    margin-bottom: 10px;
+    font-size: 1.1em; /* Mantenha para espaçamento, mas o tamanho é definido pelo .star-icon */
+}
+
+.footer-stars {
+    /* Cor não é mais necessária, pois está na imagem */
+    font-size: 1.2em; /* Mantenha para espaçamento */
+    margin-bottom: 20px;
+}
+
 /* --- RESPONSIVIDADE --- */
 
 @media (max-width: 1200px) {
@@ -1125,6 +1261,54 @@ a {
         width: 100%;
         max-width: 300px;
         font-size: 1.3em;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-col {
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 30px;
+        padding-top: 0;
+    }
+    
+    .footer-col-info {
+        max-width: 400px;
+        order: 1; /* Mantém a logo no topo */
+    }
+
+    .footer-col-links {
+        order: 2; /* Links de info no meio */
+    }
+    
+    .footer-col-contato {
+        order: 3; /* Contato por último */
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-list {
+        text-align: center;
+    }
+
+    .footer-list li {
+        margin-bottom: 10px;
+    }
+
+    .cnpj {
+        margin-top: 15px;
+    }
+    
+    .btn-central-ajuda {
+        width: 100%;
+        max-width: 300px;
+        padding: 15px 0;
     }
 }
 

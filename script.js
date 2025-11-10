@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- 1. FUNCIONALIDADE DO MENU MOBILE ---
     const menuToggle = document.querySelector('.menu-toggle');
     const menuClose = document.querySelector('.menu-close');
     const navMenu = document.querySelector('.nav-menu');
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', closeMenu);
     });
 
+    // --- 2. FUNCIONALIDADE DO CARROSSEL DE DEPOIMENTOS (SCROLLER) ---
     const scroller = document.querySelector('.depoimentos-scroller');
 
     if (scroller) {
@@ -30,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentX = 0; 
 
         const scrollerContent = Array.from(scroller.children);
+        // Clona os itens para criar o efeito de loop infinito
         scrollerContent.forEach(item => {
             const duplicatedItem = item.cloneNode(true);
             scroller.appendChild(duplicatedItem);
@@ -61,7 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const resetPoint = scroller.scrollWidth / 2;
+            // Ponto onde o scroll reseta (metade do total de conteúdo)
+            const resetPoint = scroller.scrollWidth / 2; 
             let newX = currentX - (speed * elapsed);
             if (newX <= -resetPoint) {
                 newX += resetPoint; 
@@ -77,76 +81,60 @@ document.addEventListener('DOMContentLoaded', () => {
         animationFrameId = requestAnimationFrame(animateScroll);
     }
 
-    // --- FUNCIONALIDADE FAQ (ACORDEÃO) ---
+    // --- 3. FUNCIONALIDADE DO FAQ (ACORDEÃO) ---
     const faqItems = document.querySelectorAll('.faq-item');
 
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
         
         question.addEventListener('click', () => {
-            // Verifica se o item clicado já está ativo
             const wasActive = item.classList.contains('active');
 
-            // Fecha todos os itens
+            // Fecha todos os itens abertos
             faqItems.forEach(i => {
                 i.classList.remove('active');
             });
 
-            // Se o item não estava ativo, abre-o
+            // Se não estava ativo, abre o item clicado
             if (!wasActive) {
                 item.classList.add('active');
             }
         });
     });
 
-    // --- VALIDAÇÃO E HABILITAÇÃO DO BOTÃO DO FORMULÁRIO DE CONTATO ---
+
+    // --- 4. VALIDAÇÃO E HABILITAÇÃO DO BOTÃO DO FORMULÁRIO DE CONTATO ---
     const form = document.getElementById('contactForm');
     const submitButton = document.getElementById('submitButton');
 
     if (form && submitButton) {
+        // Seleciona todos os campos de entrada que têm o atributo 'required'
         const requiredInputs = form.querySelectorAll('[required]');
 
+        // Função que verifica se todos os campos estão preenchidos
         const checkFormValidity = () => {
             let isFormValid = true;
             
             requiredInputs.forEach(input => {
+                // Checa se o campo está vazio (o trim() remove espaços em branco)
                 if (!input.value.trim()) {
                     isFormValid = false;
                 }
             });
-
+            
+            // Habilita ou desabilita o botão
             submitButton.disabled = !isFormValid;
         };
 
+        // Adiciona um listener para checar a validade a cada interação
         requiredInputs.forEach(input => {
-
             input.addEventListener('input', checkFormValidity);
         });
 
+        // Garante que o estado inicial do botão esteja correto ao carregar a página
         checkFormValidity();
-
-        // --- COLETANDO DADOS NO ENVIO (FRONT-END) ---
-        form.addEventListener('submit', function(e) {
-            e.preventDefault(); 
-
-            if (submitButton.disabled) {
-                alert('Por favor, preencha todos os campos obrigatórios.');
-                return;
-            }
-
-            // 1. Coletar os dados
-            const formData = {
-                nome: document.getElementById('nome').value.trim(),
-                telefone: document.getElementById('telefone').value.trim(),
-                duvida: document.getElementById('duvida').value.trim()
-            };
-
-            console.log("Dados prontos para envio:", formData);
-            
-
-            alert('Mensagem enviada com sucesso! Em breve entraremos em contato.');
-            form.reset();
-            checkFormValidity();
-        });
+        
+        // **IMPORTANTE:** Não há 'submit' listener com e.preventDefault(). 
+        // O formulário será enviado de forma Padrão HTML para o 'enviar.php'
     }
 });

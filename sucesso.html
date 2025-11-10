@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sucesso! Mensagem Enviada | IFCT</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="UtilFile/img/logoifct.ico" type="image/x-icon">
+    
+    <style>
+        /* O estilo :root já está no style.css */
+        
+        body {
+            background: radial-gradient(circle,rgba(1, 17, 39, 1) 40%, rgba(2, 35, 82, 1) 100%);
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .success-box {
+            background-color: #0d233e; /* Um azul escuro um pouco mais claro */
+            color: white;
+            padding: 60px 40px;
+            border-radius: 10px;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .success-icon {
+            color: var(--cor-secundaria); /* Laranja */
+            font-size: 4em;
+            margin-bottom: 20px;
+            /* Se você quiser usar uma imagem em vez de ícone, use um <img> aqui. */
+            /* Exemplo: <img src="UtilFile/icon/check.png" alt="Sucesso" style="width: 60px;"> */
+        }
+
+        .success-box h1 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .success-box p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+
+        .btn-return {
+            display: inline-block;
+            background-color: var(--cor-secundaria);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .btn-return:hover {
+            background-color: #e68a00;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="success-box">
+        <span class="success-icon">✔️</span> 
+        
+        <h1>Mensagem Enviada com Sucesso!</h1>
+        
+        <p>
+            Agradecemos o seu contato. Um de nossos especialistas 
+            entrará em contato com você o mais breve possível para dar seguimento à sua solicitação.
+        </p>
+        
+        <a href="lucroreal.html" class="btn-return">Voltar para a Página Inicial</a>
+    </div>
+
+</body>
+</html>
